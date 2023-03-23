@@ -1,0 +1,422 @@
+#################################################################
+###  Generated with the experimental alpha version of the TTL exporter of WebVOWL (version 1.1.7)  http://visualdataweb.de/webvowl/   ###
+#################################################################
+
+@prefix : 		<http://visualdataweb.org/newOntology/> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/#> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@base 			<http://visualdataweb.org/newOntology/> .
+
+<http://visualdataweb.org/newOntology/> rdf:type owl:Ontology ;
+                                        dc:title "Internet user in Uk"@en;
+                                        dc:description "Internet user in Uk"@en . 
+#################################################################
+
+###  Property Definitions (Number of Property) 10 ###
+#  --------------------------- Property 0------------------------- 
+:hasyear rdf:type owl:ObjectProperty ;
+         rdfs:label "hasyear"@en; 
+         rdfs:domain :Time_Period;
+         rdfs:range :Year . 
+#  --------------------------- Property 1------------------------- 
+:hastimeperiodfornonuser rdf:type owl:ObjectProperty ;
+                         rdfs:label "hastimeperiodfornonuser"@en; 
+                         rdfs:domain :Non_internet_User;
+                         rdfs:range :Time_Period . 
+#  --------------------------- Property 2------------------------- 
+:haslapsedtime rdf:type owl:ObjectProperty ;
+               rdfs:label "haslapsedtime"@en; 
+               rdfs:domain :Lapsed_Internet_User;
+               rdfs:range :Time_Period . 
+#  --------------------------- Property 3------------------------- 
+:hasusagetime rdf:type owl:ObjectProperty ;
+              rdfs:label "hasusagetime"@en; 
+              rdfs:domain :Recent_Internet_User;
+              rdfs:range :Time_Period . 
+#  --------------------------- Property 4------------------------- 
+:hasdemographicdetails rdf:type owl:ObjectProperty ;
+                       rdfs:label "hasdemographicdetails"@en; 
+                       rdfs:domain :People;
+                       rdfs:range :Demographic . 
+#  --------------------------- Property 5------------------------- 
+:hasconfidentinterval rdf:type owl:ObjectProperty ;
+                      rdfs:label "hasconfidentinterval"@en; 
+                      rdfs:domain :People;
+                      rdfs:range :Confident_Interval . 
+#  --------------------------- Property 6------------------------- 
+:residesin rdf:type owl:ObjectProperty ;
+           rdfs:label "residesin"@en; 
+           rdfs:domain :People;
+           rdfs:range :Uk . 
+#  --------------------------- Property 7------------------------- 
+:hasnutscode rdf:type owl:ObjectProperty ;
+             rdfs:label "hasnutscode"@en; 
+             rdfs:domain :Uk;
+             rdfs:range :NUTS_CODE . 
+#  --------------------------- Property 8------------------------- 
+:hasregion rdf:type owl:ObjectProperty ;
+           rdfs:label "hasregionforlowlevel"@en; 
+           rdfs:domain :low_level_geographical_location;
+           rdfs:range :region . 
+#  --------------------------- Property 9------------------------- 
+:hasregion rdf:type owl:ObjectProperty ;
+           rdfs:label "hasregionforgeographical"@en; 
+           rdfs:domain :_geographical_location;
+           rdfs:range :region . 
+###  Class Definitions (Number of Classes) 90 ###
+#  --------------------------- Class  0------------------------- 
+:People rdf:type owl:Class; 
+        rdfs:label "People"@en . 
+#  --------------------------- Class  1------------------------- 
+:Internet_User rdf:type owl:Class; 
+               rdfs:subClassOf :People ;
+               rdfs:label "Internet Users"@en . 
+#  --------------------------- Class  2------------------------- 
+:Non_internet_User rdf:type owl:Class; 
+                   rdfs:subClassOf :People ;
+                   rdfs:label "Internet Non User"@en . 
+#  --------------------------- Class  3------------------------- 
+:Recent_Internet_User rdf:type owl:Class; 
+                      rdfs:subClassOf :Internet_User ;
+                      rdfs:label "Recent Internet User"@en . 
+#  --------------------------- Class  4------------------------- 
+:Lapsed_Internet_User rdf:type owl:Class; 
+                      rdfs:subClassOf :Internet_User ;
+                      rdfs:label "Lapsed Internet User"@en . 
+#  --------------------------- Class  5------------------------- 
+:Demographic rdf:type owl:Class; 
+             rdfs:label "Demographics"@en . 
+#  --------------------------- Class  6------------------------- 
+:Age_Group rdf:type owl:Class; 
+           rdfs:subClassOf :Demographic ;
+           rdfs:label "Age Group"@en . 
+#  --------------------------- Class  7------------------------- 
+:Sex rdf:type owl:Class; 
+     rdfs:subClassOf :Demographic ;
+     rdfs:label "Sex"@en . 
+#  --------------------------- Class  8------------------------- 
+:Disability rdf:type owl:Class; 
+            rdfs:subClassOf :Demographic ;
+            rdfs:label "Disability"@en . 
+#  --------------------------- Class  9------------------------- 
+:Eth rdf:type owl:Class; 
+     rdfs:subClassOf :Demographic ;
+     rdfs:label "Ethnic Group"@en . 
+#  --------------------------- Class  10------------------------- 
+:Economic_Activity rdf:type owl:Class; 
+                   rdfs:subClassOf :Demographic ;
+                   rdfs:label "Economic Activity"@en . 
+#  --------------------------- Class  11------------------------- 
+:Confident_Interval rdf:type owl:Class; 
+                    rdfs:label "Confident Interval"@en . 
+#  --------------------------- Class  12------------------------- 
+:Lower_Limit rdf:type owl:Class; 
+             rdfs:subClassOf :Confident_Interval ;
+             rdfs:label "Lower Limit"@en . 
+#  --------------------------- Class  13------------------------- 
+:Survey_estimate rdf:type owl:Class; 
+                 rdfs:subClassOf :Confident_Interval ;
+                 rdfs:label "Survey estimate"@en . 
+#  --------------------------- Class  14------------------------- 
+:Upper_limit rdf:type owl:Class; 
+             rdfs:subClassOf :Confident_Interval ;
+             rdfs:label "Upper limit"@en . 
+#  --------------------------- Class  15------------------------- 
+:Time_Period rdf:type owl:Class; 
+             rdfs:label "Time Period"@en . 
+#  --------------------------- Class  16------------------------- 
+:Uk rdf:type owl:Class; 
+    rdfs:label "Uk"@en . 
+#  --------------------------- Class  17------------------------- 
+:_geographical_location rdf:type owl:Class; 
+                        rdfs:label " geographical location"@en . 
+#  --------------------------- Class  18------------------------- 
+:low_level_geographical_location rdf:type owl:Class; 
+                                 rdfs:label "lowlevel geographical location"@en . 
+#  --------------------------- Class  19------------------------- 
+:Uk rdf:type owl:Class; 
+    rdfs:subClassOf :Time_Period ;
+    rdfs:label "Uk"@en . 
+#  --------------------------- Class  20------------------------- 
+:_geographical_location rdf:type owl:Class; 
+                        rdfs:subClassOf :Uk ;
+                        rdfs:subClassOf :Time_Period ;
+                        rdfs:label " geographical location"@en . 
+#  --------------------------- Class  21------------------------- 
+:low_level_geographical_location rdf:type owl:Class; 
+                                 rdfs:subClassOf :Uk ;
+                                 rdfs:subClassOf :Time_Period ;
+                                 rdfs:label "lowlevel geographical location"@en . 
+#  --------------------------- Class  22------------------------- 
+:Year rdf:type owl:Class; 
+      rdfs:label "Year"@en . 
+#  --------------------------- Class  23------------------------- 
+:2010 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2011"@en . 
+#  --------------------------- Class  24------------------------- 
+:2012 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2012"@en . 
+#  --------------------------- Class  25------------------------- 
+:2013 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2013"@en . 
+#  --------------------------- Class  26------------------------- 
+:2014 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2014"@en . 
+#  --------------------------- Class  27------------------------- 
+:2015 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2015"@en . 
+#  --------------------------- Class  28------------------------- 
+:2016 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2016"@en . 
+#  --------------------------- Class  29------------------------- 
+:2017 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2017"@en . 
+#  --------------------------- Class  30------------------------- 
+:2018 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2018"@en . 
+#  --------------------------- Class  31------------------------- 
+:2019 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2019"@en . 
+#  --------------------------- Class  32------------------------- 
+:2020 rdf:type owl:Class; 
+      rdfs:subClassOf :Year ;
+      rdfs:label "2020"@en . 
+#  --------------------------- Class  33------------------------- 
+:Men rdf:type owl:Class; 
+     rdfs:subClassOf :Sex ;
+     rdfs:label "Men"@en . 
+#  --------------------------- Class  34------------------------- 
+:women rdf:type owl:Class; 
+       rdfs:subClassOf :Sex ;
+       rdfs:label "women"@en . 
+#  --------------------------- Class  35------------------------- 
+:16-24 rdf:type owl:Class; 
+       rdfs:subClassOf :Age_Group ;
+       rdfs:label "16-24"@en . 
+#  --------------------------- Class  36------------------------- 
+:25-34 rdf:type owl:Class; 
+       rdfs:subClassOf :Age_Group ;
+       rdfs:label "25-34"@en . 
+#  --------------------------- Class  37------------------------- 
+:35-44 rdf:type owl:Class; 
+       rdfs:subClassOf :Age_Group ;
+       rdfs:label "35-44"@en . 
+#  --------------------------- Class  38------------------------- 
+:45-54 rdf:type owl:Class; 
+       rdfs:subClassOf :Age_Group ;
+       rdfs:label "45-54"@en . 
+#  --------------------------- Class  39------------------------- 
+:55-64 rdf:type owl:Class; 
+       rdfs:subClassOf :Age_Group ;
+       rdfs:label "55-64"@en . 
+#  --------------------------- Class  40------------------------- 
+:65-74 rdf:type owl:Class; 
+       rdfs:subClassOf :Age_Group ;
+       rdfs:label "65-74"@en . 
+#  --------------------------- Class  41------------------------- 
+:75+ rdf:type owl:Class; 
+     rdfs:subClassOf :Age_Group ;
+     rdfs:label "75+"@en . 
+#  --------------------------- Class  42------------------------- 
+:DDA_disabled1 rdf:type owl:Class; 
+               rdfs:subClassOf :Disability ;
+               rdfs:label "DDA disabled1"@en . 
+#  --------------------------- Class  43------------------------- 
+:Work_limiting_disability_only rdf:type owl:Class; 
+                               rdfs:subClassOf :Disability ;
+                               rdfs:label "Work limiting disability only"@en . 
+#  --------------------------- Class  44------------------------- 
+:No_disability2 rdf:type owl:Class; 
+                rdfs:subClassOf :Disability ;
+                rdfs:label "No disability2"@en . 
+#  --------------------------- Class  45------------------------- 
+:Equality_Act_disabled3 rdf:type owl:Class; 
+                        rdfs:subClassOf :Disability ;
+                        rdfs:label "Equality Act disabled3"@en . 
+#  --------------------------- Class  46------------------------- 
+:Not_Equality_Act_disabled2 rdf:type owl:Class; 
+                            rdfs:subClassOf :Disability ;
+                            rdfs:label "Not Equality Act disabled2"@en . 
+#  --------------------------- Class  47------------------------- 
+:_White_ rdf:type owl:Class; 
+         rdfs:subClassOf :Eth ;
+         rdfs:label " White "@en . 
+#  --------------------------- Class  48------------------------- 
+<http://visualdataweb.org/newOntology/_Mixed/multiple_ethnic_background_> rdf:type owl:Class; 
+                                                                          rdfs:subClassOf :Eth ;
+                                                                          rdfs:label " Mixed/multiple ethnic background "@en . 
+#  --------------------------- Class  49------------------------- 
+:_Indian_ rdf:type owl:Class; 
+          rdfs:subClassOf :Eth ;
+          rdfs:label " Indian "@en . 
+#  --------------------------- Class  50------------------------- 
+:_Pakistani_ rdf:type owl:Class; 
+             rdfs:subClassOf :Eth ;
+             rdfs:label " Pakistani "@en . 
+#  --------------------------- Class  51------------------------- 
+:_Bangladeshi_ rdf:type owl:Class; 
+               rdfs:subClassOf :Eth ;
+               rdfs:label " Bangladeshi "@en . 
+#  --------------------------- Class  52------------------------- 
+:_Chinese_ rdf:type owl:Class; 
+           rdfs:subClassOf :Eth ;
+           rdfs:label " Chinese "@en . 
+#  --------------------------- Class  53------------------------- 
+:_Other_Asian_background_ rdf:type owl:Class; 
+                          rdfs:subClassOf :Eth ;
+                          rdfs:label " Other Asian background "@en . 
+#  --------------------------- Class  54------------------------- 
+<http://visualdataweb.org/newOntology/_Black/African/Caribbean/Black_British_> rdf:type owl:Class; 
+                                                                               rdfs:subClassOf :Eth ;
+                                                                               rdfs:label " Black/African/Caribbean/Black British "@en . 
+#  --------------------------- Class  55------------------------- 
+:_Other_ethnic_group_ rdf:type owl:Class; 
+                      rdfs:subClassOf :Eth ;
+                      rdfs:label " Other ethnic group "@en . 
+#  --------------------------- Class  56------------------------- 
+:Employed rdf:type owl:Class; 
+          rdfs:subClassOf :Economic_Activity ;
+          rdfs:label "Employed"@en . 
+#  --------------------------- Class  57------------------------- 
+:Self-employed rdf:type owl:Class; 
+               rdfs:subClassOf :Economic_Activity ;
+               rdfs:label "Self-employed"@en . 
+#  --------------------------- Class  58------------------------- 
+:Government_employment_&_training_programmes rdf:type owl:Class; 
+                                             rdfs:subClassOf :Economic_Activity ;
+                                             rdfs:label "Government employment & training programmes"@en . 
+#  --------------------------- Class  59------------------------- 
+:Unpaid_family_worker rdf:type owl:Class; 
+                      rdfs:subClassOf :Economic_Activity ;
+                      rdfs:label "Unpaid family worker"@en . 
+#  --------------------------- Class  60------------------------- 
+:Unemployed rdf:type owl:Class; 
+            rdfs:subClassOf :Economic_Activity ;
+            rdfs:label "Unemployed"@en . 
+#  --------------------------- Class  61------------------------- 
+:Student rdf:type owl:Class; 
+         rdfs:subClassOf :Economic_Activity ;
+         rdfs:label "Student"@en . 
+#  --------------------------- Class  62------------------------- 
+:Retired rdf:type owl:Class; 
+         rdfs:subClassOf :Economic_Activity ;
+         rdfs:label "Retired"@en . 
+#  --------------------------- Class  63------------------------- 
+:Inactive2 rdf:type owl:Class; 
+           rdfs:subClassOf :Economic_Activity ;
+           rdfs:label "Inactive2"@en . 
+#  --------------------------- Class  64------------------------- 
+:NUTS_CODE rdf:type owl:Class; 
+           rdfs:label "NUTS CODE"@en . 
+#  --------------------------- Class  65------------------------- 
+:UKC rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKC"@en . 
+#  --------------------------- Class  66------------------------- 
+:UKD rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKD"@en . 
+#  --------------------------- Class  67------------------------- 
+:UKE rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKE"@en . 
+#  --------------------------- Class  68------------------------- 
+:UKF rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKF"@en . 
+#  --------------------------- Class  69------------------------- 
+:UKG rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKG"@en . 
+#  --------------------------- Class  70------------------------- 
+:UKH rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKH"@en . 
+#  --------------------------- Class  71------------------------- 
+:UKI rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKI"@en . 
+#  --------------------------- Class  72------------------------- 
+:UKJ rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKJ"@en . 
+#  --------------------------- Class  73------------------------- 
+:UKK rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKK"@en . 
+#  --------------------------- Class  74------------------------- 
+:UKL rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKL"@en . 
+#  --------------------------- Class  75------------------------- 
+:UKM rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKM"@en . 
+#  --------------------------- Class  76------------------------- 
+:UKN rdf:type owl:Class; 
+     rdfs:subClassOf :NUTS_CODE ;
+     rdfs:label "UKN"@en . 
+#  --------------------------- Class  77------------------------- 
+:region rdf:type owl:Class; 
+        rdfs:label "region"@en . 
+#  --------------------------- Class  78------------------------- 
+:North_East rdf:type owl:Class; 
+            rdfs:subClassOf :region ;
+            rdfs:label "North East"@en . 
+#  --------------------------- Class  79------------------------- 
+:North_West rdf:type owl:Class; 
+            rdfs:subClassOf :region ;
+            rdfs:label "North West"@en . 
+#  --------------------------- Class  80------------------------- 
+:Yorkshire_and_the_Humber rdf:type owl:Class; 
+                          rdfs:subClassOf :region ;
+                          rdfs:label "Yorkshire and the Humber"@en . 
+#  --------------------------- Class  81------------------------- 
+:East_Midlands rdf:type owl:Class; 
+               rdfs:subClassOf :region ;
+               rdfs:label "East Midlands"@en . 
+#  --------------------------- Class  82------------------------- 
+:West_Midlands rdf:type owl:Class; 
+               rdfs:subClassOf :region ;
+               rdfs:label "West Midlands"@en . 
+#  --------------------------- Class  83------------------------- 
+:East_of_England rdf:type owl:Class; 
+                 rdfs:subClassOf :region ;
+                 rdfs:label "East of England"@en . 
+#  --------------------------- Class  84------------------------- 
+:London rdf:type owl:Class; 
+        rdfs:subClassOf :region ;
+        rdfs:label "London"@en . 
+#  --------------------------- Class  85------------------------- 
+:South_East rdf:type owl:Class; 
+            rdfs:subClassOf :region ;
+            rdfs:label "South East"@en . 
+#  --------------------------- Class  86------------------------- 
+:South_West rdf:type owl:Class; 
+            rdfs:subClassOf :region ;
+            rdfs:label "South West"@en . 
+#  --------------------------- Class  87------------------------- 
+:Wales rdf:type owl:Class; 
+       rdfs:subClassOf :region ;
+       rdfs:label "Wales"@en . 
+#  --------------------------- Class  88------------------------- 
+:Scotland rdf:type owl:Class; 
+          rdfs:subClassOf :region ;
+          rdfs:label "Scotland"@en . 
+#  --------------------------- Class  89------------------------- 
+:Northern_Ireland rdf:type owl:Class; 
+                  rdfs:subClassOf :region ;
+                  rdfs:label "Northern Ireland"@en . 
